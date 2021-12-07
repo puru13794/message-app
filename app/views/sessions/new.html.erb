@@ -1,1 +1,18 @@
 <p>sessions</p>
+<%= form_for(:session, url:login_path) do |form| %>
+    
+    <div class="field">
+      <%= form.label :username %>
+      <%= form.text_field :username %>
+    </div>
+
+    <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password_digest %>
+    </div>
+    <dic class="actions">
+      <%= form.button "login" %>
+    </div>
+  <% end %>
+ 
+  

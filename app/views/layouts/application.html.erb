@@ -3,6 +3,15 @@
   <head>
     <title>Messageapp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <center>
+    <% if logged_in? %>
+      <%= link_to "logout", logout_path, method: :delete %>
+
+    <% else %>
+      <%= link_to "log in", login_path %>
+
+    <% end %>
+    </center>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +20,7 @@
   </head>
 
   <body>
+    
     <%= yield %>
   </body>
 </html>

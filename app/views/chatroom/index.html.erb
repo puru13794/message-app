@@ -1,1 +1,11 @@
-<p>chatroom</p>
+<center><p>chatroom</p></center>
+
+<br>
+<% @messages.each do |message| %>
+    <p><%= message.user.username %> : <%= message.body %></p>
+<% end %>
+
+<%= form_for(@message, url: message_path) do |f| %>
+    <%= f.text_field :body %>
+    <%= f.button %>
+<% end %>
